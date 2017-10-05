@@ -38,7 +38,7 @@ def task(f):
 def callback(f):
     callbacks.append(f)
 
-    def register_callback():
-        f()
+    def register_callback(*args, **kwargs):
+        f(*args, **kwargs)
 
     return register_callback
